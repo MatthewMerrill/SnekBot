@@ -1,13 +1,13 @@
 // ==UserScript==
 // @name         Sneknet v2: Eletric Boogaloo
 // @namespace    https://sneknet.com/
-// @version      0.3
+// @version      0.4
 // @description  try to take over the world!
 // @author       Matthew Merrill <mattmerr.com>
 // @match        https://www.reddit.com/sequence
 // @grant        none
-// @updateURL    https://snek.mattmerr.com/bot.js
-// @downloadURL  https://snek.mattmerr.com/bot.js
+// @updateURL    https://snek.mattmerr.com/bot.user.js
+// @downloadURL  https://snek.mattmerr.com/bot.user.js
 // @supportURL   https://snek.mattmerr.com/
 // ==/UserScript==
 
@@ -100,7 +100,14 @@ function broadcast(msg) {
   document.body.innerHTML = `<h1 style="font-size: 4em">${msg}</h1>`;
   console.log.apply(console, arguments);
 }
-broadcast('Running Sequence Bot...')
-go()
-  .then(val => broadcast('Finished:' + JSON.stringify(val)))
-  .catch(err => broadcast('Error:' + JSON.stringify(err)));
+
+if (location.href.indexOf('reddit.com') < 0) {
+  alert('Drag the link to your bookmark bar, not click it!');
+}
+else {
+  broadcast('Running Sequence Bot...');
+  go()
+    .then(val => broadcast('Finished:' + JSON.stringify(val)))
+    .catch(err => broadcast('Error:' + JSON.stringify(err)));
+}
+
