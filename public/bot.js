@@ -6,6 +6,9 @@
 // @author       Matthew Merrill <mattmerr.com>
 // @match        https://www.reddit.com/sequence
 // @grant        none
+// @updateURL    https://snek.mattmerr.com/bot.js
+// @downloadURL  https://snek.mattmerr.com/bot.js
+// @supportURL   https://snek.mattmerr.com/
 // ==/UserScript==
 
 // Matthew Merrill <mattmerr.com>
