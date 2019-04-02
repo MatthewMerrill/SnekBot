@@ -97,8 +97,7 @@ function broadcast(msg) {
   document.body.innerHTML = `<h1 style="font-size: 4em">${msg}</h1>`;
   console.log.apply(console, arguments);
 }
-broadcast('Running Sequence Bot');
-
+broadcast('Running Sequence Bot!')
 go()
   .then(val => broadcast('Finished:' + JSON.stringify(val)))
   .catch(err => broadcast('Error:' + JSON.stringify(err)));
