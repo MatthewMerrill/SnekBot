@@ -1,0 +1,28 @@
+<h3>1. Drag this to your bookmark bar</h3>
+<a id="bookmarklink">RUN SEQUENCE BOT</a>
+
+<h3>2. Open the sequence website and click the bookmark</h3>
+<h3>3. Do not do anything on the page! It will end the bot.</h3>
+
+<h2>Alternate workflow</h2>
+<p>If you'd rather read the code before running it, you can just run the code in your console.</p>
+
+<h3>1. Copy this code</h3>
+<pre id="precode" style="border: 3px solid green">Loading code...</pre>
+
+<h3>2. Open the sequence website</h3>
+<h3>3. Run the code in the developer tools console</h3>
+
+<script>
+  const bookmarkLink = document.getElementById('bookmarklink');
+  const preCode = document.getElementById('precode');
+  fetch('/bot.js')
+    .then(res => {
+      return res.text();
+    })
+    .then(botjs => {
+      bookmarkLink.href = 'javascript:' + botjs;
+      preCode.innerText = botjs;
+    });
+</script>
+
